@@ -85,7 +85,7 @@ export const Header = () => {
         for you.
       </p>
 
-      <div className='my-24 flex justify-center items-center gap-6'>
+      <div className='my-24 max-sm:px-8 flex justify-center items-center gap-6'>
         <Button
           className='bg-purple-600 text-xl py-5'
           asChild>

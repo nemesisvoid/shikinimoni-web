@@ -4,20 +4,11 @@ import { navList } from '@/constants';
 import { MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  const navRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);
@@ -27,11 +18,6 @@ export const Navbar = () => {
     setIsOpen(() => !isOpen);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (navRef.current && !navRef.current.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
   return (
     <header className='fixed top-0 left-0 right-0 z-50 bg-dark-300'>
       <div className='max-w-7xl mx-auto max-md:px-5'>
@@ -68,7 +54,6 @@ export const Navbar = () => {
       </div>
 
       <nav
-        ref={navRef}
         className={`md:hidden absolute flex justify-end z-20 transition-all duration-500  bg-dark-300  w-full overflow-hidden ${
           isOpen ? 'max-h-screen' : 'max-h-0'
         }`}>
