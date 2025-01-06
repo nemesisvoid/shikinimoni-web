@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '../ui/button';
 
 export const Cta = () => {
@@ -19,7 +20,11 @@ export const Cta = () => {
           </div>
 
           <div>
-            <Button className='bg-purple-500 hover:bg-purple-400 duration-500 text-white text-xl py-6'>Explore Properties</Button>
+            <Button
+              className='bg-purple-500 hover:bg-purple-400 duration-500 text-white text-xl py-6'
+              asChild>
+              <Link href={'/properties'}>Explore Properties</Link>
+            </Button>
           </div>
         </div>
       </div>

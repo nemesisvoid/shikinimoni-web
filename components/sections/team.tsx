@@ -16,7 +16,10 @@ export const Team = () => {
           <h1 className='section-header mb-5'>
             The Team Behind <span className='text-purple-500'>Shikinimoni</span>
           </h1>
-          <p className='text-lg'>We are the founders and executives of Shikinimoni</p>
+          <p className='text-lg md:w-[65%]'>
+            The team at Shikinimoni is comprised of experienced and dedicated real estate professionals committed to providing exceptional service and
+            achieving the best possible outcomes for our clients.
+          </p>
         </div>
 
         <div className='flex flex-col sm:flex-row justify-evenly max-md:gap-10 mt-20'>

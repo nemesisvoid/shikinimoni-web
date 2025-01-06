@@ -15,7 +15,7 @@ export const Testimonials = () => {
             real estate needs.
           </p>
         </div>
-        <div className='relative flex flex-row items-center justify-center gap-2 rounded-lg sm:px-20 h-[30rem] overflow-hidden bg-background'>
+        <div className='relative flex flex-row items-center justify-center gap-2 rounded-lg sm:px-20 h-[30rem] overflow-hidden'>
           <Marquee
             vertical
             pauseOnHover
@@ -31,7 +31,7 @@ export const Testimonials = () => {
             reverse
             pauseOnHover
             vertical
-            className='[--duration:20s]'>
+            className='[--duration:20s] bg-transparent'>
             {secondRow.map(row => (
               <ReviewCard
                 key={row.name}

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion, useScroll, useTransform, useSpring, MotionValue } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from './button';
 
@@ -41,7 +40,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className='h-[220vh] py-10 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'>
+      className='h-[230vh] py-10 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'>
       <Header />
       <motion.div
         style={{
@@ -90,9 +89,13 @@ export const Header = () => {
         <Button
           className='bg-purple-600 text-xl py-5'
           asChild>
-          <Link href={''}>Browse Properties</Link>
+          <Link href={'/properties'}>Browse Properties</Link>
         </Button>
-        <Button className='text-xl'>Learn More</Button>
+        <Button
+          className='text-xl'
+          asChild>
+          <a href='#solutions'>Learn More</a>
+        </Button>
       </div>
     </div>
   );

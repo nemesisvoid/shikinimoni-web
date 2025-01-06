@@ -31,7 +31,7 @@ function ContactPage() {
                 href='mailto:u7eCt@example.com'
                 target='_blank no-referrer'
                 className='text-lg underline hover:no-underline duration-500'>
-                Shikinimoni@gmail.com
+                shikinibusinessenterprise@gmail.com
               </a>
             </div>
           </div>

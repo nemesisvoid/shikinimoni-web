@@ -23,10 +23,10 @@ export const Filter = () => {
         />
         {/* <div className='absolute w-[1px] bg-red-100 h-full left-56' /> */}
         <Select onValueChange={e => handleFilter('price', e)}>
-          <SelectTrigger className='border-none before:content-["|"] before:mx-0.5 before:text-gray-500 before:h-[20px]'>
+          <SelectTrigger className='border-none before:content-["|"] before:px-0.5 before:text-gray-500 before:h-[20px]  rounded-full active:border-none active:outline-none'>
             <SelectValue
               placeholder='Price'
-              className="before:content-['*'] after:ml-0.5 after:text-red-500"
+              className="before:content-['*'] after:ml-0.5 after:text-red-500 outline-none focus-visible:border-none rounded-full"
             />
           </SelectTrigger>
 

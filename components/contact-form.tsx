@@ -29,17 +29,21 @@ export const ContactForm = () => {
 
     try {
       emailjs.send(
-        process.env.EMAIL_SERVICE_ID!,
-        process.env.EMAIL_TEMPLATE_ID!,
+        'service_9c8cubb',
+        'template_wxufs47',
         {
           from_name: form.name,
           to_name: 'Shikinimoni',
           from_email: form.mail,
-          to_email: 'shikinimoni@gmail.com',
+          to_email: 'shikinibusinessenterprise@gmail.com',
           message: form.message,
         },
-        process.env.EMAIL_PUBLIC_KEY
+        '7aLI8faxRxw7MGFP_'
       );
+
+      setLoading(false);
+      alert('Message sent successfully');
+      setForm({ name: '', mail: '', phone: '', message: '' });
     } catch {
       setLoading(false);
     }
@@ -81,6 +85,7 @@ export const ContactForm = () => {
             onChange={handleChange}
             type='text'
             placeholder='Phone'
+            disabled={loading}
             className='form-input lg:w-1/2 min-[1340px]:w-96 placeholder:text-gray-400 focus-visible:ring-gray-400'
           />
         </div>
@@ -97,6 +102,7 @@ export const ContactForm = () => {
             value={form.mail}
             onChange={handleChange}
             type='email'
+            disabled={loading}
             placeholder='email@example.com'
             className='form-input lg:w-1/2 min-[1340px]:w-96 placeholder:text-gray-400 focus-visible:ring-gray-400'
           />
@@ -125,9 +131,10 @@ export const ContactForm = () => {
         <Button
           type='submit'
           variant='outline'
-          className='text-lg md:text-xl p-5 md:p-6 rounded-lg text-purple-500 ease-in duration-300'
+          onClick={handleMessage}
+          className='text-lg md:text-xl bg-dark-200 p-5 md:p-6 rounded-lg text-purple-500 ease-in duration-300 hover:bg-dark-200 hover:text-white hover:border-white'
           disabled={loading}>
-          Send Message
+          {loading ? 'Sending...' : 'Send Message'}
         </Button>
       </div>
     </form>

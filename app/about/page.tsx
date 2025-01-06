@@ -19,10 +19,10 @@ export default function AboutPage() {
             <StatCard />
           </div>
 
-          <div className='w-full'>
+          <div className='md:w-full'>
             <img
               src='/images/about-img.jpg'
-              className='h-full object-cover'
+              className='h-full object-cover rounded-xl'
               alt='about image'
             />
           </div>

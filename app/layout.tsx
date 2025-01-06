@@ -5,6 +5,7 @@ import { Josefin_Sans } from 'next/font/google';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/sections/footer';
 import { Cursor } from '@/components/cursor';
+import { ThemeProvider } from '@/components/ui/theme-provider';
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
@@ -24,11 +25,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${josefin.className} antialiased`}>
-        <Navbar />
-        {/* <Cursor /> */}
-
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='dark'>
+          <Navbar />
+          {/* <Cursor /> */}
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -9,7 +9,9 @@ export const Solutions = () => {
   const [isSelected, setIsSelected] = useState(0);
 
   return (
-    <section className='container my-80 relative overflow-hidden'>
+    <section
+      className='container my-80 relative overflow-hidden'
+      id='solutions'>
       <h2 className='section-header mb-10'>
         {/* Your Gateway to Property Solutions */}
         <TextGenerateEffect
