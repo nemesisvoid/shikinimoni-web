@@ -11,7 +11,7 @@ export const Achievements = () => {
       }}
       transition={{ duration: 1 }}
       initial={{ opacity: 0, y: 100 }}>
-      <div className='container my-56'>
+      <div className='container my-44'>
         <div className='mb-6'>
           <h1 className='section-header mb-5'>Achievements</h1>
           <p className='text-lg md:w-[65%]'>

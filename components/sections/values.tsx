@@ -8,7 +8,7 @@ import { IoShieldSharp } from 'react-icons/io5';
 export const Values = () => {
   return (
     <motion.section
-      className='my-52'
+      className='my-44'
       whileInView={{
         opacity: 1,
         y: 0,

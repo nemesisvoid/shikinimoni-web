@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Team = () => {
   return (
     <motion.section
-      className='my-52'
+      className='my-44'
       whileInView={{
         opacity: 1,
         y: 0,
