@@ -40,7 +40,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className='h-[230vh] py-10 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'>
+      className='h-[300vh] md:h-[250vh] py-10 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'>
       <Header />
       <motion.div
         style={{
@@ -77,22 +77,22 @@ export const Header = () => {
   return (
     <div className='max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0 z-20'>
       <h1 className='text-white text-4xl lg:text-7xl text-center font-bold'>
-        Discover your Dream <br /> Home With Shikinimoni
+        Discover Your Dream <br className='hidden md:block' /> Home With Shikinimoni
       </h1>
 
       <p className='text-lg md:text-xl text-center mt-10 max-sm:px-6'>
-        Welcome to Shikinimoni, where your property journey begins. <br /> Explore our curated listings of stunning homes and find the perfect space
-        for you.
+        Welcome to Shikinimoni, where your property journey begins. <br className='hidden md:block' /> Explore our curated listings of stunning homes
+        and find the perfect space for you.
       </p>
 
-      <div className='my-24 max-sm:px-8 flex justify-center items-center gap-6'>
+      <div className='my-24 max-sm:px-8 flex justify-center items-center gap-6 z-10'>
         <Button
-          className='bg-purple-600 text-xl py-5'
+          className='bg-purple-600 text-white hover:bg-purple-500 text-xl py-5 md:py-6  '
           asChild>
           <Link href={'/properties'}>Browse Properties</Link>
         </Button>
         <Button
-          className='text-xl'
+          className='text-xl  py-5 md:py-6'
           asChild>
           <a href='#solutions'>Learn More</a>
         </Button>

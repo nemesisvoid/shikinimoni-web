@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from './ui/button';
+import { formatCurrency } from '@/lib/utils';
 
 type PropertyCardProps = {
   name: string;
@@ -28,7 +29,7 @@ export const PropertyCard = ({ data }) => {
             <div className='flex flex-col gap-1'>
               <span className='text-gray-400'>Price</span>
               <p className='text-xl'>
-                ${data.price}
+                {formatCurrency(data.price)}
                 {data.model === 'rent' && '/yr'}
               </p>
             </div>

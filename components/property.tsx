@@ -2,25 +2,29 @@ import { PropertyType } from '@/types/appwrite.types';
 import { ImageList } from './image-list';
 import { BedDoubleIcon, Grid2X2Icon, ShowerHeadIcon } from 'lucide-react';
 import { Button } from './ui/button';
+import { formatCurrency } from '@/lib/utils';
 type PropertyProps = {
   data: PropertyType | undefined;
 };
 export const Property = ({ data }: PropertyProps) => {
   return (
     <div>
-      <div className='flex flex-col md:flex-row md:items-center justify-between gap-4'>
-        <div className='flex items-center gap-4'>
+      <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
+        <div className='flex sm:items-center max-sm:flex-col gap-4'>
           <h3 className='text-white text-3xl'>{data?.name}</h3>
-          <p className='text-sm bg-dark-300 px-4 py-3 rounded-full'>{data?.location}</p>
+          <p className='text-sm w-fit bg-dark-300 px-4 py-3 rounded-full'>{data?.location}</p>
         </div>
 
-        <div className='flex flex-col'>
-          <span className='text-gray-400'>Price</span>
-          <p className='text-2xl'>${data?.price}</p>
+        <div className='max-sm:mt-12 flex flex-col'>
+          <span className='text-gray-400 text-lg'>Price</span>
+          <p className='text-2xl'>
+            {formatCurrency(data.price!)}
+            {data?.model === 'rent' && '/yr'}
+          </p>
         </div>
       </div>
 
-      <div className='bg-dark-300 p-6 rounded-xl my-14'>
+      <div className='bg-dark-300 p-3 md:p-5 rounded-xl my-14'>
         <ImageList />
       </div>
 
@@ -60,7 +64,7 @@ export const Property = ({ data }: PropertyProps) => {
             <h3 className='text-white text-2xl mb-3'>Inquire about {data?.name}</h3>
             <p>Interested in this property? Reach out to us for more information.</p>
             <Button
-              className='text-purple-600 mt-14 text-xl py-5 rounded-sm'
+              className='text-white bg-dark-300 mt-14 text-xl py-5 rounded-sm'
               variant={'secondary'}
               asChild>
               <a href=''>Contact Us</a>

@@ -1,9 +1,7 @@
-import { SearchInput } from '@/components/search-input';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { PropertiesList } from './properties-list';
 import { Suspense } from 'react';
 import { Filter } from '@/components/filter';
-import { use } from 'react';
 import Loading from '../loading';
 
 async function PropertiesPage(props) {
@@ -36,8 +34,6 @@ async function PropertiesPage(props) {
         {/* <SearchInput /> */}
         <Filter />
       </div>
-
-      {/* <div></div> */}
 
       <Suspense fallback={<Loading />}>
         <section className='container relative'>

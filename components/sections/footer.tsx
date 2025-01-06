@@ -2,6 +2,7 @@
 
 import { navList } from '@/constants';
 import Link from 'next/link';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
@@ -29,24 +30,13 @@ export const Footer = () => {
           </nav>
 
           <div className='flex items-center gap-4'>
-            <div>
-              <img
-                src='/social-icons/whatsapp.svg'
-                width={30}
-                height={30}
-                alt='whatsapp icon'
-              />
-            </div>
+            <a href=''>
+              <FaWhatsapp size={30} />
+            </a>
 
-            <div>
-              <img
-                src='/social-icons/insta.svg'
-                width={30}
-                height={30}
-                className='text-white'
-                alt='instagram icon'
-              />
-            </div>
+            <a href='https://www.instagram.com/shikinimoni/'>
+              <FaInstagram size={30} />
+            </a>
           </div>
         </div>
       </div>

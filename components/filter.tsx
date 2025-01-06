@@ -1,6 +1,6 @@
 'use client';
 
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { IoCash, IoHome } from 'react-icons/io5';
 
@@ -15,8 +15,8 @@ export const Filter = () => {
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
   return (
-    <div className='flex items-center gap-10'>
-      <div className='flex items-center px-3 border border-gray-600 rounded-xl w-1/3'>
+    <div className='flex md:items-center gap-4 md:gap-10'>
+      <div className='flex md:items-center px-3 border border-gray-600 rounded-xl md:w-1/3'>
         <IoCash
           className='size-8 text-purple-400'
           // size={10}
@@ -38,7 +38,7 @@ export const Filter = () => {
         </Select>
       </div>
 
-      <div className='flex items-center px-3 border border-gray-600 rounded-xl w-1/3'>
+      <div className='flex items-center px-3 border border-gray-600 rounded-xl md:w-1/3'>
         <IoHome className='size-8 text-purple-400' />
         <Select onValueChange={e => handleFilter('mode', e)}>
           <SelectTrigger className='border-none before:content-["|"] before:mx-0.5 before:text-gray-500 before:h-[20px]'>

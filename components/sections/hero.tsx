@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <section className='overflow-hidden'>
       <HeroParallax products={propertyImages} />
-      <div className='w-full absolute inset-0 h-[100vh] md:h-[150vh] -z-10'>
+      <div className='w-full absolute inset-0 h-[300vh] md:h-[250vh] -z-10'>
         <SparklesCore
           id='tsparticlesfullpage'
           background='transparent'

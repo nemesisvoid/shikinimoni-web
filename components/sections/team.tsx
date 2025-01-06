@@ -23,10 +23,10 @@ export const Team = () => {
         </div>
 
         <div className='flex flex-col sm:flex-row justify-evenly max-md:gap-10 mt-20'>
-          <div className='p-6 border border-dark-300 rounded-xl relative'>
+          <div className='p-6 border border-dark-300 rounded-xl md:w-1/3'>
             <div className='mb-5'>
               <img
-                src='/images/ceo.png'
+                src='/images/ceo-img.jpg'
                 alt='team-image'
                 className='w-full object-cover rounded-xl'
               />
@@ -38,7 +38,7 @@ export const Team = () => {
             </div>
           </div>
 
-          <div className='p-6 rounded-xl border border-dark-300'>
+          <div className='p-6 rounded-xl border border-dark-300 md:w-1/3'>
             <div className='mb-5'>
               <img
                 src='/images/ceo.png'

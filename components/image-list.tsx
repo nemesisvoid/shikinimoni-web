@@ -8,7 +8,7 @@ export const ImageList = () => {
   const [image, setImage] = useState(0);
   return (
     <>
-      <div className='bg-dark-200  rounded-xl p-3'>
+      <div className='bg-dark-200  rounded-xl max-sm:p-2 p-3'>
         <div className='flex items-center gap-8'>
           {propertyImages
             .map((image, index) => (
@@ -19,7 +19,7 @@ export const ImageList = () => {
                 <img
                   src={image.src}
                   alt=''
-                  className={cn('h-20 md:h-28 w-36 md:w-44 rounded-xl object-cover', '')}
+                  className={cn('h-16 md:h-28 w-36 md:w-44 rounded-xl object-cover', '')}
                 />
               </div>
             ))

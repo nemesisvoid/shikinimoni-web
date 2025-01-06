@@ -7,8 +7,7 @@ export const Choose = () => {
       className='container my-80'
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.3 }}
-      viewport={{ once: true }}>
+      transition={{ duration: 1.3 }}>
       <div className='flex flex-col md:flex-row gap-10'>
         <div className='md:basis-[90%] md:self-stretch'>
           <img
