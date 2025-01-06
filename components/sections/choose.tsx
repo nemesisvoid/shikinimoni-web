@@ -10,7 +10,7 @@ export const Choose = () => {
       transition={{ duration: 1.3 }}
       viewport={{ once: true }}>
       <div className='flex flex-col md:flex-row gap-10'>
-        <div className='md:basis-[90%] self-stretch '>
+        <div className='basis-[40%] md:basis-[90%] self-stretch '>
           <img
             src='/images/img-6.jpg'
             alt='property image'

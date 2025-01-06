@@ -19,7 +19,7 @@ export default function AboutPage() {
             <StatCard />
           </div>
 
-          <div className='md:w-full'>
+          <div className='basis-[40%] m:basis-0 md:w-full'>
             <img
               src='/images/about-img.jpg'
               className='h-full object-cover rounded-xl'
