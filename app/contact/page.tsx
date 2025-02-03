@@ -68,10 +68,10 @@ function ContactPage() {
 
             <div>
               <a
-                href='tel:+234909900'
+                href='tel:+2348167567755'
                 target='_blank no-referrer'
                 className='text-lg underline hover:no-underline duration-500'>
-                09029000000
+                +234 816 756 7755
               </a>
             </div>
           </div>

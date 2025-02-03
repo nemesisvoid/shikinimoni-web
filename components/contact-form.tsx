@@ -33,8 +33,9 @@ export const ContactForm = () => {
         'template_wxufs47',
         {
           from_name: form.name,
-          to_name: 'Shikinimoni',
           from_email: form.mail,
+          from_phone: form.phone,
+          to_name: 'Shikinimoni',
           to_email: 'shikinibusinessenterprise@gmail.com',
           message: form.message,
         },

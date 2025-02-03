@@ -1,6 +1,6 @@
 'use server';
 
-import { PROJECT_ID, BUCKET_ID, COLLECTION_ID, DATABASE_ID, database, storage } from '@/lib/appwrite.config';
+import { BUCKET_ID, COLLECTION_ID, DATABASE_ID, database, storage } from '@/lib/appwrite.config';
 import { PropertyType } from '@/types/appwrite.types';
 import { Query } from 'node-appwrite';
 
@@ -13,7 +13,7 @@ export const getProperties = async () => {
   }
 };
 
-export const searchProperties = async search => {
+export const searchProperties = async (search: string) => {
   if (!search) return [];
   try {
     const searchedProperties = await database.listDocuments(DATABASE_ID!, COLLECTION_ID!, [Query.equal('name', search)]);
@@ -34,11 +34,21 @@ export const getProperty = async (id: string): Promise<PropertyType | undefined>
   }
 };
 
-export const getImages = async (id: string) => {
-  if (!id) return;
+export const getPropertiesForRent = async () => {
   try {
-    const images = await storage.getFileView(BUCKET_ID!, id);
-    return images;
+    const properties = await database.listDocuments(DATABASE_ID!, COLLECTION_ID!, [Query.contains('model', ['rent'])]);
+    console.log(properties);
+    return properties.documents;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getPropertiesForSale = async () => {
+  try {
+    const properties = await database.listDocuments(DATABASE_ID!, COLLECTION_ID!, [Query.contains('model', ['sale'])]);
+    console.log(properties.documents);
+    return properties.documents;
   } catch (error) {
     console.error(error);
   }

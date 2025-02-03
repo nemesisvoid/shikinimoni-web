@@ -34,7 +34,7 @@ export const Footer = () => {
               <FaWhatsapp size={30} />
             </a>
 
-            <a href='https://www.instagram.com/shikinimoni/'>
+            <a href='https://www.instagram.com/shikinimonidotcom/'>
               <FaInstagram size={30} />
             </a>
           </div>

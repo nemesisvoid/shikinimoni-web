@@ -1,36 +1,42 @@
 import { PropertyCard } from '@/components/property-card.';
-import { getProperties } from '@/lib/actions';
+import { PropertyType } from '@/types/appwrite.types';
 
 type PropertyListProps = {
-  priceFilter: string;
-  modeFilter: string;
-  typeFilter: string;
+  priceFilter?: string;
+  modeFilter?: string;
+  data: PropertyType[] | undefined;
 };
 
-export const PropertiesList = async ({ priceFilter, modeFilter, typeFilter }: PropertyListProps) => {
-  const properties = await getProperties();
-  let displayedProperties = properties;
+export const PropertiesList = ({ data, priceFilter, modeFilter }: PropertyListProps) => {
+  let displayedProperties = data;
+  console.log('dis', displayedProperties);
 
-  if (priceFilter === 'all' && modeFilter === 'all' && typeFilter === 'all') {
-    displayedProperties = properties;
+  // if (priceFilter === 'all') {
+  //   displayedProperties = data;
+  // }
+  // Apply mode filter
+  // if (modeFilter && modeFilter !== 'all') {
+  //   displayedProperties = displayedProperties?.filter(property => property.model === modeFilter);
+  // }
+  switch (modeFilter) {
+    case 'rent':
+      displayedProperties = displayedProperties?.filter(property => property.model === 'rent');
+      break;
+    case 'sale':
+      displayedProperties = displayedProperties?.filter(property => property.model === 'sale');
+      break;
+    case 'all':
+    default:
+      break;
   }
-  if (modeFilter !== 'all') {
-    displayedProperties = displayedProperties?.filter(property => property.model === modeFilter);
+
+  switch (priceFilter) {
+    case 'low-to-high':
+      displayedProperties = displayedProperties?.sort((a, b) => a.price - b.price);
+      break;
+    case 'high-to-low':
+      displayedProperties = displayedProperties?.sort((a, b) => b.price - a.price);
   }
-
-  if (modeFilter === 'rent') displayedProperties = properties?.filter(property => property.model === 'rent');
-
-  if (modeFilter === 'sale') displayedProperties = properties?.filter(property => property.model === 'sale');
-
-  if (typeFilter === 'apartment') displayedProperties = properties?.filter(property => property.type === 'apartment');
-
-  if (typeFilter === 'mansion') displayedProperties = properties?.filter(property => property.type === 'house');
-
-  if (typeFilter === 'house') displayedProperties = properties?.filter(property => property.type === 'house');
-
-  if (priceFilter === 'low-to-high') displayedProperties = displayedProperties?.sort((a, b) => a.price - b.price);
-
-  if (priceFilter === 'high-to-low') displayedProperties = displayedProperties?.sort((a, b) => b.price - a.price);
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>

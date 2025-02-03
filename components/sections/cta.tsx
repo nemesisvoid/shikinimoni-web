@@ -10,12 +10,12 @@ export const Cta = () => {
 
       <div className='container my-20'>
         <h2 className='section-header mb-12'>Start Your Real Estate Journey Today</h2>
-        <div className='flex items-center justify-between max-sm:flex-col max-sm:gap-10'>
+        <div className='flex md:items-center justify-between max-md:flex-col max-md:gap-10'>
           <div>
-            <p className='md:max-w-[85%] text-lg'>
-              Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice,
-              Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available
-              properties or get in touch with our team for personalized assistance.
+            <p className='md:max-w-[85%] text-xl'>
+              Looking for a new home? a strategic investment? or expert real estate advice? Shikinimoni is here to assist you every step of the way.
+              Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized
+              assistance.
             </p>
           </div>
 

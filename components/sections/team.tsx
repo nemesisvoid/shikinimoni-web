@@ -41,7 +41,7 @@ export const Team = () => {
           <div className='p-6 rounded-xl border border-dark-300 md:w-1/3'>
             <div className='mb-5'>
               <img
-                src='/images/ceo.png'
+                src='/images/ceo-img-2.png'
                 alt='team-image'
                 className='w-full object-cover rounded-xl'
               />

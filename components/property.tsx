@@ -1,37 +1,36 @@
 import { PropertyType } from '@/types/appwrite.types';
 import { ImageList } from './image-list';
-import { BedDoubleIcon, Grid2X2Icon, ShowerHeadIcon } from 'lucide-react';
+import { BedDoubleIcon, LandPlotIcon, LocateFixedIcon, ShowerHeadIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import { formatCurrency } from '@/lib/utils';
+import { BUCKET_ID, storage } from '@/lib/appwrite.config';
 type PropertyProps = {
   data: PropertyType | undefined;
 };
-export const Property = ({ data }: PropertyProps) => {
+export const Property = async ({ data }: PropertyProps) => {
+  const imgs = await Promise.all(
+    data?.images?.map(async img => {
+      const url = storage.getFileView(BUCKET_ID!, img);
+      return url.toString();
+    }) || []
+  );
   return (
     <div>
-      <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
-        <div className='flex sm:items-center max-sm:flex-col gap-4'>
-          <h3 className='text-white text-3xl'>{data?.name}</h3>
-          <p className='text-sm w-fit bg-dark-300 px-4 py-3 rounded-full'>{data?.location}</p>
-        </div>
-
-        <div className='max-sm:mt-12 flex flex-col'>
-          <span className='text-gray-400 text-lg'>Price</span>
-          <p className='text-2xl'>
-            {formatCurrency(data.price!)}
-            {data?.model === 'rent' && '/yr'}
-          </p>
-        </div>
-      </div>
-
       <div className='bg-dark-300 p-3 md:p-5 rounded-xl my-14'>
-        <ImageList />
+        <ImageList images={imgs} />
       </div>
 
       <div className='mt-14 flex flex-col lg:flex-row justify-between gap-20 lg:gap-12'>
         <div className='lg:w-[50%]'>
+          <h3 className='text-3xl mb-2 font-semibold'>
+            {formatCurrency(data.price!)}
+            {data?.model === 'rent' && '/yr'}
+          </h3>
+
+          <p className='text-xl mb-10 font-light'>{data?.location}</p>
+
           <h3 className='text-white text-2xl'>Description</h3>
-          <p className='mt-3 text-gray-400'>{data?.description}</p>
+          <p className='mt-2 text-gray-400'>{data?.description}</p>
 
           <div className='flex items-center justify-between mt-12 pt-4 border-t border-gray-600 gap-10'>
             <div>
@@ -52,10 +51,18 @@ export const Property = ({ data }: PropertyProps) => {
 
             <div>
               <div className='flex items-center gap-2 text-gray-400 mb-3'>
-                <Grid2X2Icon size={24} />
-                <span className=''>Area</span>
+                <LandPlotIcon size={24} />
+                <span className=''>Plot</span>
               </div>
               <p className='text-white text-xl'>N/A</p>
+            </div>
+
+            <div>
+              <div className='flex items-center gap-2 text-gray-400 mb-3'>
+                <LocateFixedIcon size={24} />
+                <span className=''>City</span>
+              </div>
+              <p className='text-white text-xl'>Ilorin</p>
             </div>
           </div>
         </div>

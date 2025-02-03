@@ -13,7 +13,6 @@ export const Solutions = () => {
       className='container my-80 relative overflow-hidden'
       id='solutions'>
       <h2 className='section-header mb-10'>
-        {/* Your Gateway to Property Solutions */}
         <TextGenerateEffect
           className='section-header mb-14 inline-block'
           words='Your Gateway to Property Solutions'
@@ -32,8 +31,8 @@ export const Solutions = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}>
           <p className='text-lg'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat et sunt corporis odio rerum? Ex quidem aliquid eveniet sapiente, id
-            ratione ad atque est eum, ea non itaque. Consectetur, minima.
+            Whether you're a first-time buyer, a seasoned investor, or simply looking for a new home, you are right on time. Explore our luxury
+            properties, commercial spaces, and affordable housing solutions, and discover why Shikinimoni is the trusted name in Nigerian real estate.
           </p>
 
           <div className='flex flex-col gap-6 mt-8'>
@@ -45,7 +44,7 @@ export const Solutions = () => {
                 )}`}
                 key={index}
                 onClick={() => setIsSelected(index)}>
-                <h3 className='text-2xl'>{heading}</h3>
+                <h3 className='text-2xl mb-3'>{heading}</h3>
                 <p className=''>{text}</p>
               </div>
             ))}

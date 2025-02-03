@@ -12,12 +12,12 @@ export const StatCard = () => {
       </div>
 
       <div className='bg-dark-100 py-6 px-10 border border-gray-500 rounded-xl'>
-        <Counter num={500} />
+        <Counter num={1000} />
         <p>Happy Customers</p>
       </div>
 
       <div className='bg-dark-100 py-6 px-10 border border-gray-500 rounded-xl'>
-        <Counter num={4} />
+        <Counter num={7} />
         <p>Years of Experience</p>
       </div>
     </div>

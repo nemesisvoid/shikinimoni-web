@@ -89,12 +89,12 @@ export const Header = () => {
         <Button
           className='bg-purple-600 text-white hover:bg-purple-500 text-xl py-5 md:py-6  '
           asChild>
-          <Link href={'/properties'}>Browse Properties</Link>
+          <Link href={'/properties/sale'}>For Sale</Link>
         </Button>
         <Button
           className='text-xl  py-5 md:py-6'
           asChild>
-          <a href='#solutions'>Learn More</a>
+          <a href='/properties/rent'>For Rent</a>
         </Button>
       </div>
     </div>

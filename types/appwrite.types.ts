@@ -7,6 +7,7 @@ export interface PropertyType extends Models.Document {
   description: string;
   bedrooms: number;
   bathrooms: number;
+  size: string;
   model: string;
   images: Array<string>;
 }
