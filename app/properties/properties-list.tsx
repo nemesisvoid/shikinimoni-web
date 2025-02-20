@@ -42,7 +42,7 @@ export const PropertiesList = ({ data, priceFilter, modeFilter }: PropertyListPr
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
       {displayedProperties?.map(property => (
         <PropertyCard
-          key={property.name}
+          key={`${property.$id}-${property.name}`}
           data={property}
         />
       ))}

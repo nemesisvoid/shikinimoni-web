@@ -14,20 +14,25 @@ export const PropertyCard = ({ data }: { data: PropertyType }) => {
         <img
           src={image}
           alt='property image'
-          className='object-cover h-60 w-full rounded-xl hover:scale-[1.03] duration-300 select-none'
+          className='object-cover h-60 w-full rounded-xl lg:hover:scale-[1.03] duration-300 select-none'
         />
       </div>
       <div>
         <div className='text-white'>
-          <div className='flex flex-col gap-3  sm:flex-row sm:items-center justify-between mb-5 sm:mb-4'>
+          <div className='flex items-center justify-between mb-5 sm:mb-4'>
             <div>
               <p className='text-sm py-1 px-3 bg-dark-300 rounded-full w-fit'>{data.location}</p>
             </div>
 
             <div className='flex items-center gap-1 '>
               <div className='w-3 h-3 rounded-full animate-pulse bg-purple-600' />
-              available
+              Available
             </div>
+          </div>
+
+          <div className='flex gap-1 my-4 text-gray-400'>
+            <IoLocation size={18} />
+            <p>Ilorin</p>
           </div>
 
           <div className='flex gap-10 my-6'>
@@ -51,11 +56,6 @@ export const PropertyCard = ({ data }: { data: PropertyType }) => {
                 <p>{data.size}</p>
               </div>
             )}
-          </div>
-
-          <div className='flex gap-1 my-4 text-gray-400'>
-            <IoLocation size={18} />
-            <p>Ilorin</p>
           </div>
 
           <div className='flex flex-col sm:flex-row  sm:items-center justify-between max-sm:gap-5'>

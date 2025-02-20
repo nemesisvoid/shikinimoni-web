@@ -1,5 +1,6 @@
 import { Achievements } from '@/components/sections/achievements';
 import { Cta } from '@/components/sections/cta';
+import { Solutions } from '@/components/sections/solutions';
 import { Team } from '@/components/sections/team';
 import { Values } from '@/components/sections/values';
 import { StatCard } from '@/components/ui/stat-card';
@@ -29,6 +30,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <Solutions />
       <Values />
       <Achievements />
       <Team />

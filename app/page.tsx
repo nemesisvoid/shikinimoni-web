@@ -6,6 +6,7 @@ import { Faq } from '@/components/sections/faq';
 import { RecentProperties } from '@/components/sections/recent-properties';
 import { Suspense } from 'react';
 import Loading from './loading';
+import PropertiesForSale from '@/components/sections/properties-for-sale';
 
 function Home() {
   return (
@@ -15,7 +16,11 @@ function Home() {
         <Suspense fallback={<Loading />}>
           <RecentProperties />
         </Suspense>
-        <Solutions />
+
+        <Suspense fallback={<Loading />}>
+          <PropertiesForSale />
+        </Suspense>
+
         {/* <Choose /> */}
         <Testimonials />
         <Cta />

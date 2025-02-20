@@ -1,7 +1,5 @@
 'use client';
 
-import { propertyImages } from '@/constants';
-import { BUCKET_ID, storage } from '@/lib/appwrite.config';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 
@@ -17,7 +15,7 @@ export const ImageList = ({ images }: { images: string[] }) => {
           {images
             .map((image, index) => (
               <div
-                key={index}
+                key={`${image}-${index}`}
                 className='hover:cursor-pointer'
                 onClick={() => setImage(index)}>
                 <img
@@ -29,14 +27,13 @@ export const ImageList = ({ images }: { images: string[] }) => {
             ))
             .slice(0, 5)}
         </div>
-      </div>
-
-      <div className='mt-10'>
-        <img
-          className='rounded-xl object-cover'
-          src={images[image]}
-          alt={''}
-        />
+        <div className='mt-10 w-full'>
+          <img
+            className='rounded-xl object-cover w-full h-[700px]'
+            src={images[image]}
+            alt='property image'
+          />
+        </div>
       </div>
     </>
   );

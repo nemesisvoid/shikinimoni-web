@@ -21,24 +21,24 @@ export const Property = async ({ data }: PropertyProps) => {
       </div>
 
       <div className='mt-14 flex flex-col lg:flex-row justify-between gap-20 lg:gap-12'>
-        <div className='lg:w-[50%]'>
+        <div className='lg:w-[40%]'>
           <h3 className='text-3xl mb-2 font-semibold'>
             {formatCurrency(data.price!)}
             {data?.model === 'rent' && '/yr'}
           </h3>
 
-          <p className='text-xl mb-10 font-light'>{data?.location}</p>
+          <p className='text-lg mb-10 font-base'>{data?.location}</p>
 
           <h3 className='text-white text-2xl'>Description</h3>
           <p className='mt-2 text-gray-400'>{data?.description}</p>
 
-          <div className='flex items-center justify-between mt-12 pt-4 border-t border-gray-600 gap-10'>
+          <div className='flex items-center justify-between flex-wrap mt-12 pt-4 border-t border-gray-600 gap-10'>
             <div>
               <div className='flex items-center gap-2 text-gray-400 mb-3'>
                 <BedDoubleIcon size={24} />
                 <span className=''>Bedrooms</span>
               </div>
-              <p className='text-white text-xl'>{String(data?.bedrooms).padStart(2, '0')}</p>
+              <p className='text-white text-xl'>{data?.bedrooms ? String(data?.bedrooms).padStart(2, '0') : 'N/A'}</p>
             </div>
 
             <div>
@@ -46,7 +46,7 @@ export const Property = async ({ data }: PropertyProps) => {
                 <ShowerHeadIcon size={24} />
                 <span className=''>Bathrooms</span>
               </div>
-              <p className='text-white text-xl'>{String(data?.bathrooms).padStart(2, '0')}</p>
+              <p className='text-white text-xl'>{data?.bathrooms ? String(data?.bathrooms).padStart(2, '0') : 'N/A'}</p>
             </div>
 
             <div>

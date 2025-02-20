@@ -1,6 +1,6 @@
 'use server';
 
-import { BUCKET_ID, COLLECTION_ID, DATABASE_ID, database, storage } from '@/lib/appwrite.config';
+import { COLLECTION_ID, DATABASE_ID, database } from '@/lib/appwrite.config';
 import { PropertyType } from '@/types/appwrite.types';
 import { Query } from 'node-appwrite';
 
