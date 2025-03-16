@@ -26,13 +26,13 @@ export const PropertyCard = ({ data }: { data: PropertyType }) => {
 
             <div className='flex items-center gap-1 '>
               <div className='w-3 h-3 rounded-full animate-pulse bg-purple-600' />
-              Available
+              <span className='text-md'>available</span>
             </div>
           </div>
 
           <div className='flex gap-1 my-4 text-gray-400'>
             <IoLocation size={18} />
-            <p>Ilorin</p>
+            <p>{data.city}</p>
           </div>
 
           <div className='flex gap-10 my-6'>

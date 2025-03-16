@@ -9,7 +9,6 @@ type PropertyListProps = {
 
 export const PropertiesList = ({ data, priceFilter, modeFilter }: PropertyListProps) => {
   let displayedProperties = data;
-  console.log('dis', displayedProperties);
 
   // if (priceFilter === 'all') {
   //   displayedProperties = data;

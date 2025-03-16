@@ -17,7 +17,6 @@ export const ContactForm = () => {
   });
 
   const handleChange = ({ target: { name, value } }: { target: { name: string; value: string } }) => {
-    console.log(name, value);
     setForm({ ...form, [name]: value });
   };
 

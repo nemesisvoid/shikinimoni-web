@@ -17,7 +17,6 @@ export const searchProperties = async (search: string) => {
   if (!search) return [];
   try {
     const searchedProperties = await database.listDocuments(DATABASE_ID!, COLLECTION_ID!, [Query.equal('name', search)]);
-    console.log(searchedProperties.documents);
     return searchedProperties.documents;
   } catch (err) {
     console.error(err);
@@ -37,7 +36,6 @@ export const getProperty = async (id: string): Promise<PropertyType | undefined>
 export const getPropertiesForRent = async () => {
   try {
     const properties = await database.listDocuments(DATABASE_ID!, COLLECTION_ID!, [Query.contains('model', ['rent'])]);
-    console.log(properties);
     return properties.documents;
   } catch (error) {
     console.error(error);
@@ -47,7 +45,6 @@ export const getPropertiesForRent = async () => {
 export const getPropertiesForSale = async () => {
   try {
     const properties = await database.listDocuments(DATABASE_ID!, COLLECTION_ID!, [Query.contains('model', ['sale'])]);
-    console.log(properties.documents);
     return properties.documents;
   } catch (error) {
     console.error(error);
