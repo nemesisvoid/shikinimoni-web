@@ -49,7 +49,7 @@ export const Team = () => {
 
             <div className='flex flex-col items-center'>
               <h4 className='font-medium text-xl my-2'>Ajibade Moses</h4>
-              <p className='text-gray-400'>Assistant CEO</p>
+              <p className='text-gray-400'>Senior Project Manager</p>
             </div>
           </div>
         </div>

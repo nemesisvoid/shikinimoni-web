@@ -29,7 +29,7 @@ export const RecentProperties = async () => {
       <div className='text-center mt-20'>
         <Link
           href='/properties'
-          className='bg-purple-500 hover:bg-purple-400 duration-500 text-white text-xl py-4 px-4'>
+          className='bg-purple-500 hover:bg-purple-400 duration-500 text-white text-center text-xl inline-block py-3 px-4'>
           View All
         </Link>
       </div>
